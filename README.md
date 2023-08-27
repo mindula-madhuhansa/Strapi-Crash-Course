@@ -23,4 +23,4 @@ I followed the tutorial playlist available on YouTube to learn how to create thi
 
 1. Clone this repository: `git clone https://github.com/mindula-madhuhansa/Strapi-Crash-Course.git`
 2. Navigate to the project directory: `cd Strapi-Crash-Course`
-3. Install dependencies for both the frontend and backend.
+3. Install dependencies.
