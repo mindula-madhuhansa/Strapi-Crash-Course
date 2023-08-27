@@ -31,6 +31,22 @@
     },
     "blogContent": {
       "type": "richtext"
+    },
+    "authorAvatar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "authorName": {
+      "type": "string"
+    },
+    "authorDescription": {
+      "type": "string"
     }
   }
 }

@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
+import ReactMarkdown from "react-markdown";
 
 export default function BlogContent({ blogs }) {
   const { id } = useParams();
@@ -68,7 +69,9 @@ export default function BlogContent({ blogs }) {
               {blog.attributes.blogTitle}
             </h1>
             <div className="pt-5">
-              <p>{blog.attributes.blogContent}</p>
+              <ReactMarkdown className="line-break">
+                {blog.attributes.blogContent}
+              </ReactMarkdown>
             </div>
           </div>
 
@@ -76,14 +79,14 @@ export default function BlogContent({ blogs }) {
             <div>
               <img
                 className="p-2 w-32 h-32 rounded-full mx-auto object-cover"
-                src={blog.authorAvatar}
-                alt="author avatar"
+                src={`http://localhost:1337${blog.attributes.authorAvatar.data.attributes.url}`}
+                alt={`http://localhost:1337${blog.attributes.authorAvatar.data.attributes.url} cover image`}
               />
               <h1 className="font-bold text-2xl text-center text-gray-900 pt-3">
-                {blog.authorName}
+                {blog.attributes.authorName}
               </h1>
               <p className="text-center text-gray-900 font-medium">
-                {blog.authorDescription}
+                {blog.attributes.authorDescription}
               </p>
             </div>
           </div>
