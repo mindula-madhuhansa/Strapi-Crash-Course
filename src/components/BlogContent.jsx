@@ -1,53 +1,58 @@
 import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export default function BlogContent() {
+export default function BlogContent({ blogs }) {
   const { id } = useParams();
 
-  const blogs = [
-    {
-      id: 1,
-      title: "Blog 1",
-      description: "Electron for Desktop app Development",
-      content:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem odit asperiores, qui ad iusto non alias, ullam nemo, similique deserunt a perferendis impedit neque accusantium illo nostrum ipsum doloribus iste!",
-      coverImg:
-        "https://res.cloudinary.com/practicaldev/image/fetch/s--6UEM9XZf--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/s3uitx6rdv7sod1g2acz.png",
-      authorName: "John Doe",
-      authorAvatar:
-        "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      authorDescription: "Web Developer",
-    },
-    {
-      id: 2,
-      title: "Blog 2",
-      description: "Electron for Desktop app Development",
-      content:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem odit asperiores, qui ad iusto non alias, ullam nemo, similique deserunt a perferendis impedit neque accusantium illo nostrum ipsum doloribus iste!",
-      coverImg:
-        "https://res.cloudinary.com/practicaldev/image/fetch/s--6UEM9XZf--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/s3uitx6rdv7sod1g2acz.png",
-      authorName: "John Doe",
-      authorAvatar:
-        "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      authorDescription: "Web Developer",
-    },
-    {
-      id: 3,
-      title: "Blog 3",
-      description: "Electron for Desktop app Development",
-      content:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem odit asperiores, qui ad iusto non alias, ullam nemo, similique deserunt a perferendis impedit neque accusantium illo nostrum ipsum doloribus iste!",
-      coverImg:
-        "https://res.cloudinary.com/practicaldev/image/fetch/s--6UEM9XZf--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/s3uitx6rdv7sod1g2acz.png",
-      authorName: "John Doe",
-      authorAvatar:
-        "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      authorDescription: "Web Developer",
-    },
-  ];
+  let blog = {};
+  if (blog) {
+    let arr = blogs.data.filter((blog) => blog.id == id);
+    blog = arr[0];
+  } else {
+    blog = {};
+  }
 
-  let blog = blogs.filter((blog) => blog.id == id);
-  blog = blog[0];
-  console.log(blog);
+  // const blogsList = [
+  //   {
+  //     id: 1,
+  //     title: "Blog 1",
+  //     description: "Electron for Desktop app Development",
+  //     content:
+  //       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem odit asperiores, qui ad iusto non alias, ullam nemo, similique deserunt a perferendis impedit neque accusantium illo nostrum ipsum doloribus iste!",
+  //     coverImg:
+  //       "https://res.cloudinary.com/practicaldev/image/fetch/s--6UEM9XZf--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/s3uitx6rdv7sod1g2acz.png",
+  //     authorName: "John Doe",
+  //     authorAvatar:
+  //       "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  //     authorDescription: "Web Developer",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Blog 2",
+  //     description: "Electron for Desktop app Development",
+  //     content:
+  //       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem odit asperiores, qui ad iusto non alias, ullam nemo, similique deserunt a perferendis impedit neque accusantium illo nostrum ipsum doloribus iste!",
+  //     coverImg:
+  //       "https://res.cloudinary.com/practicaldev/image/fetch/s--6UEM9XZf--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/s3uitx6rdv7sod1g2acz.png",
+  //     authorName: "John Doe",
+  //     authorAvatar:
+  //       "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  //     authorDescription: "Web Developer",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Blog 3",
+  //     description: "Electron for Desktop app Development",
+  //     content:
+  //       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem odit asperiores, qui ad iusto non alias, ullam nemo, similique deserunt a perferendis impedit neque accusantium illo nostrum ipsum doloribus iste!",
+  //     coverImg:
+  //       "https://res.cloudinary.com/practicaldev/image/fetch/s--6UEM9XZf--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/s3uitx6rdv7sod1g2acz.png",
+  //     authorName: "John Doe",
+  //     authorAvatar:
+  //       "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  //     authorDescription: "Web Developer",
+  //   },
+  // ];
 
   return (
     <div className="w-full pb-10 bg-[#f9f9f9]">
@@ -56,12 +61,14 @@ export default function BlogContent() {
           <div className="col-span-2 gap-x-8 gap-y-8">
             <img
               className="h-56 w-full object-cover"
-              src={blog.coverImg}
-              alt={blog.title}
+              src={`http://localhost:1337${blog.attributes.coverImg.data.attributes.url}`}
+              alt={`http://localhost:1337${blog.attributes.blogTitle} cover image`}
             ></img>
-            <h1 className="font-bold text-2xl my-1 pt-5">{blog.title}</h1>
+            <h1 className="font-bold text-2xl my-1 pt-5">
+              {blog.attributes.blogTitle}
+            </h1>
             <div className="pt-5">
-              <p>{blog.content}</p>
+              <p>{blog.attributes.blogContent}</p>
             </div>
           </div>
 
@@ -85,3 +92,7 @@ export default function BlogContent() {
     </div>
   );
 }
+
+BlogContent.propTypes = {
+  blogs: PropTypes.object.isRequired,
+};

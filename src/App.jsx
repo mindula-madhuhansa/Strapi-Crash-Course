@@ -9,13 +9,15 @@ function App() {
   );
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error!</p>;
-  console.log(data);
 
   return (
     <>
       <Routes>
-        <Route index element={<Homepage />} />
-        <Route path="/blog/:id" element={<Blogpage />} />
+        <Route index element={<Homepage blogs={data ? data : ""} />} />
+        <Route
+          path="/blog/:id"
+          element={<Blogpage blogs={data ? data : ""} />}
+        />
       </Routes>
     </>
   );
