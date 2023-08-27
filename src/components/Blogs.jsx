@@ -32,7 +32,7 @@ export default function Blogs() {
         <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-8 px-4 text-black">
           {blogs.map((blog) => (
             <div
-              className="bg-white rounded-xl overflow-hidden drop-shadow-md"
+              className="bg-white rounded-xl overflow-hidden drop-shadow-md cursor-pointer"
               key={blog.id}
             >
               <img

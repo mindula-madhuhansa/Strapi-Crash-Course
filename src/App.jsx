@@ -1,14 +1,12 @@
-import Blogs from "./components/Blogs";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import Blogpage from "./pages/Blogpage";
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Blogs />
-      <Footer />
-    </div>
+    <>
+      {/* <Homepage /> */}
+      <Blogpage />
+    </>
   );
 }
 
